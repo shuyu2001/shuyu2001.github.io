@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@callmebill/lxgw-wenkai-web@latest/style.css" />
+    <link rel="stylesheet" href="https://at.alicdn.com/t/c/font_4767785_wl7vbc7joxd.css" />
+    <style type="text/css">
+        .icon {
+            margin-right: 3px;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: disc;
+        }
+
+        body {
+            font-family: "LXGW WenKai";
+            font-style: normal;
+            font-weight: 500;
+        }
+    </style>
+    <title>简历模板</title>
+</head>
+
+<body class="bg-gray-100 p-2">
+    <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-lg p-6" id="resume">
+        <div class="flex justify-between mb-3">
+            <p class="font-bold text-xl" x-text="name">郑书宇</p>
+            <p class="font-bold text-lg" x-text="job">后端开发工程师</p>
+        </div>
+        <hr class="my-2 bg-gray-100 mb-3">
+
+        <div class="md:flex grid md:gap-7 gap-3 md:justify-center text-sm">
+            <template x-for="info in infos">
+                <p class="flex gap-1" :title="info.title">
+                    <i :class="'text-gray-500 iconfont ' + info.icon"></i>
+                    <template x-if="!info.href">
+                        <span x-text="info.label"></span>
+                    </template>
+                    <template x-if="info.href">
+                        <a :href="info.href" target="_blank" class="text-blue-600" x-text="info.label"
+                            :title="info.title"></a>
+                    </template>
+                </p>
+            </template>
+            <p class="flex gap-1" :title="info.title" title="基本信息">
+                <i :class="'text-gray-500 iconfont ' + info.icon" class="text-gray-500 iconfont icon-fanjiongqidunx"></i>
+                <template x-if="!info.href">
+                    <span x-text="info.label"></span>
+                </template><span x-text="info.label">男 / 23 岁</span>
+                <template x-if="info.href">
+                    <a :href="info.href" target="_blank" class="text-blue-600" x-text="info.label"
+                        :title="info.title"></a>
+                </template>
+            </p>
+            <p class="flex gap-1" :title="info.title" title="我的号码">
+                <i :class="'text-gray-500 iconfont ' + info.icon" class="text-gray-500 iconfont icon-phone"></i>
+                <template x-if="!info.href">
+                    <span x-text="info.label"></span>
+                </template><span x-text="info.label">xxx-xxxx-xxxx</span>
+                <template x-if="info.href">
+                    <a :href="info.href" target="_blank" class="text-blue-600" x-text="info.label"
+                        :title="info.title"></a>
+                </template>
+            </p>
+            <p class="flex gap-1" :title="info.title" title="我的邮箱">
+                <i :class="'text-gray-500 iconfont ' + info.icon" class="text-gray-500 iconfont icon-email"></i>
+                <template x-if="!info.href">
+                    <span x-text="info.label"></span>
+                </template>
+                <template x-if="info.href">
+                    <a :href="info.href" target="_blank" class="text-blue-600" x-text="info.label"
+                        :title="info.title"></a>
+                </template><a :href="info.href" target="_blank" class="text-blue-600" x-text="info.label"
+                    :title="info.title" href="mailto:shuyuzheng19@gmail.com" title="我的邮箱">shuyuzheng19@gmail.com</a>
+            </p>
+            <p class="flex gap-1" :title="info.title" title="我的网站">
+                <i :class="'text-gray-500 iconfont ' + info.icon" class="text-gray-500 iconfont icon-wangzhan"></i>
+                <template x-if="!info.href">
+                    <span x-text="info.label"></span>
+                </template>
+                <template x-if="info.href">
+                    <a :href="info.href" target="_blank" class="text-blue-600" x-text="info.label"
+                        :title="info.title"></a>
+                </template><a :href="info.href" target="_blank" class="text-blue-600" x-text="info.label"
+                    :title="info.title" href="https://www.shuyuz.com" title="我的网站">www.shuyuz.com</a>
+            </p>
+            <p class="flex gap-1" :title="info.title" title="基本信息">
+                <i :class="'text-gray-500 iconfont ' + info.icon" class="text-gray-500 iconfont icon-github"></i>
+                <template x-if="!info.href">
+                    <span x-text="info.label"></span>
+                </template>
+                <template x-if="info.href">
+                    <a :href="info.href" target="_blank" class="text-blue-600" x-text="info.label"
+                        :title="info.title"></a>
+                </template><a :href="info.href" target="_blank" class="text-blue-600" x-text="info.label"
+                    :title="info.title" href="https://www.github.com/shuyuzheng19"
+                    title="基本信息">github.com/shuyuzheng19</a>
+            </p>
+        </div>
+        <hr class="bg-gray-800 my-3.5">
+        <div>
+            <div class="md:flex md:justify-between">
+                <div class="flex gap-2">
+                    <i class="iconfont icon-xuehua text-blue-600" style="font-size: 20px;"></i>
+                    <span class="font-bold text-gray-700 flex gap-2 text-lg">个人优势</span>
+                </div>
+            </div>
+            <hr class="my-1 border-blue-400">
+            <p class="text-sm">
+                具备后端、前端和爬虫开发经验，参与多个项目从零到成功上线，涵盖需求分析、系统设计和开发。拥有良好的自学能力，能够高效利用多种资源学习新知识和技能，持续提升自己的能力。
+                更多项目介绍和线上作品，请访问我的个人主页：
+                <a target="blank" class="text-blue-600" href="https://www.shuyuz.com">www.shuyuz.com</a>
+            </p>
+        </div>
+        <div class="mt-3">
+            <div class="md:flex md:justify-between">
+                <div class="flex gap-2">
+                    <i class="iconfont icon-xuehua text-blue-600" style="font-size: 20px;"></i>
+                    <span class="font-bold text-gray-700 flex gap-2 text-lg">我的项目</span>
+                </div>
+            </div>
+            <hr class="my-1 border-blue-400">
+            <div class="grid gap-2">
+                <div class="text-sm">
+                    <p class="text-lg font-bold text-blue-700">博客系统</p>
+                    <p class="font-bold text-sm text-gray-700">核心功能:</p>
+                    <ul class="list-disc pl-5">
+                        <li><strong>前台:</strong> 用户注册 / 登录 / 登出，邮箱验证及密码找回，博客列表展示（时间 / 热度排序），分类 / 标签 / 专题，文件上传 / 下载</li>
+                        <li><strong>后台:</strong> 用户 / 博客 / 分类 / 标签等数据增删改查，数据过滤与排序，权限管理，保障系统安全与数据完整性。</li>
+                    </ul>
+
+                    <p class="font-bold text-sm text-gray-700">技术栈:</p>
+                    <ul class="list-disc pl-5">
+                        <li><strong>后端:</strong> Golang (Fiber 框架), PostgreSQL, Redis, GORM, JWT, Zap, Meilisearch, SMTP</li>
+                        <li><strong>前端 (前台):</strong> Vite, React, TypeScript, NextUI, Tailwind CSS</li>
+                        <li><strong>前端 (后台):</strong> Vite, Vue 3, Element Plus, Tailwind CSS</li>
+                    </ul>
+
+                    <p class="font-bold text-sm text-gray-700">亮点:</p>
+                    <ul class="list-disc pl-5">
+                        <li>高性能后端: 使用 Golang 和 Fiber 框架构建高性能 API，Redis 缓存提升用户体验。</li>
+                        <li>完善的用户体验: React 构建的前端界面，NextUI 提供美观 UI 组件，Tailwind CSS 实现灵活的定制化设计。</li>
+                        <li>安全可靠: JWT 认证机制保证用户安全，MD5 校验保证文件完整性。</li>
+                    </ul>
+                    <p>本项目有两个版本，V1 版本中使用的是 Gin 框架，当前是 Fiber 框架，更多项目信息请访问 <a class="text-blue-600"
+                            href="https://blog.shuyuz.com">htps://blog.shuyuz.com</a> 进行了解</p>
+                </div>
+                <div class="text-sm">
+                    <p class="text-lg font-bold text-blue-700">数据解析</p>
+                    <p class="font-bold text-sm text-gray-700">核心功能:</p>
+                    <ul class="list-disc pl-5">
+                        <li><strong>热榜聚合:</strong> 整合社交媒体和新闻平台的热榜数据，帮助用户快速找到感兴趣的内容。</li>
+                        <li><strong>视频直链解析:</strong> 提供视频下载链接解析服务，支持多格式下载，实时更新链接，用户友好的操作界面。</li>
+                    </ul>
+
+                    <p class="font-bold text-sm text-gray-700">技术栈:</p>
+                    <ul class="list-disc pl-5">
+                        <li>Golang (Fiber 框架), Resty, Vite, React, TypeScript, Tailwind CSS</li>
+                    </ul>
+
+                    <p class="font-bold text-sm text-gray-700">亮点:</p>
+                    <ul class="list-disc pl-5">
+                        <li>高效的数据抓取: 使用 Golang 编写爬虫程序，定期抓取各平台热榜信息。</li>
+                        <li>用户友好的界面: React 构建的前端界面，提供流畅的用户体验。</li>
+                        <li>支持多平台，例如主流的抖音、哔哩哔哩、小红书、西瓜视频、今日头条等</li>
+                    </ul>
+                    <p>这是一个爬虫项目，主要对一些主流平台的数据进行提取和解析无水印，更多信息请访问 <a class="text-blue-600"
+                            href="https://parse.shuyuz.com">https://parse.shuyuz.com</a> 进行了解。</p>
+                </div>
+                <div class="text-sm">
+                    <p class="text-lg font-bold text-blue-700">其他项目</p>
+                    <ul class="list-disc pl-5">
+                        <li><strong>AI 对话:</strong> 与 AI 进行交谈，支持上下文和角色定义，预览链接 <a class="text-blue-600"
+                                href="https://ai.shuyuz.com">https://ai.shuyuz.com</a></li>
+                        <li><strong>在线音乐:</strong> 在线收听音乐，支持多个平台之间切换搜索以及下载音乐，预览链接 <a class="text-blue-600"
+                                href="https://music.shuyuz.com">https://music.shuyuz.com</a></li>
+                        <li><strong>对联生成:</strong> 通过用户输入的关键字进行分析，生成上联、下联、横批、门帘，预览链接 <a class="text-blue-600"
+                                href="https://blog.shuyuz.com/duilian">https://blog.shuyuz.com/duilian</a></li>
+                        <li><strong>开发工具:</strong> 平常开发中常用到的工具包含 Base64、URL，世界时间，时间戳，JSON 等 预览链接<a class="text-blue-600"
+                                href="https://blog.shuyuz.com/tools">https://blog.shuyuz.com/tools</a></li>
+                        <li><strong>Java 博客</strong> 使用 Java 编写的个人博客 API 接口，Github <a class="text-blue-600"
+                                href="https://www.github.com/shuyuzheng19/java-blog-api">github.com/shuyuzheng19/java-blog-api</a>
+                        </li>
+                        <li><strong>Rust 博客</strong> 使用 Rust 编写的个人博客 API 接口，Github <a class="text-blue-600"
+                                href="https://www.github.com/shuyuzheng19/rust-blog-api">github.com/shuyuzheng19/rust-blog-api</a>
+                        </li>
+                    </ul>
+                    <p>还有一些其他项目，都是自己再用。目前已公开的项目可以在我的个人主页上查看 <a class="text-blue-600" target="_blank" href="https://www.shuyuz.com">https://www.shuyuz.com</a> 博客里有更详细的项目介绍</p>
+                </div>
+            </div>
+        </div>
+        <div class="md:flex md:justify-between mt-2">
+            <div class="flex gap-2">
+                <i class="iconfont icon-xuehua text-blue-600" style="font-size: 20px;"></i>
+                <span class="font-bold text-gray-700 flex gap-2 text-lg">工作经历</span>
+            </div>
+        </div>
+        <hr class="my-1 border-blue-400">
+        <div class="text-sm">
+            <p class="font-bold text-sm">河南xxxxx公司 <span class="text-gray-700">后端开发工程师</span>（2024.6 - 2024.11）</p>
+            <p>
+                开发 XXXX AI，主要负责 ChatGPT 相关模块的开发，添加了 AI 对话，AI 翻译，AI 搜索，AI 脑图，TTS 等功能，以及部署上线等工作
+            </p>
+        </div>
+        <div class="md:flex md:justify-between mt-2">
+            <div class="flex gap-2">
+                <i class="iconfont icon-xuehua text-blue-600" style="font-size: 20px;"></i>
+                <span class="font-bold text-gray-700 flex gap-2 text-lg">技能介绍</span>
+            </div>
+        </div>
+        <hr class="my-1 border-blue-400">
+        <div class="text-sm">
+            <p><strong>后端：</strong>Golang、Java、Python、Rust</p>
+            <p><strong>前端：</strong>React、Vue、TypeScript、JavaScript</p>
+            <p><strong>其他：</strong>Gin、GORM、Colly、Resty、JWT、Spring、Linux、Docker、Redis、SQL ........</p>
+        </div>
+    </div>
+</body>
+
+</html>

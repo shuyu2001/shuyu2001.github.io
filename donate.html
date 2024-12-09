@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>打赏捐赠</title>
+    <link rel="icon" type="image/svg+xml" href="./logo.jpg" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <!--个人信息-->
+        <div class="content">
+            <img src="./avatar.jpg" alt="头像" class="avatar">
+            <div class="user-name"><b>Yushu</b></div>
+            <div class="thank-you">🍜感谢您的喂饭🍚</div>
+            <!--支付方式-->
+            <div class="buttons">
+                <div class="button alipay" onclick="openModal('alipay')">
+                    <img src="public/pay/Alipay.svg" alt="支付宝" class="pay-icon">
+                    <span>支付宝</span>
+                </div>
+                <div class="button wechat" onclick="openModal('wechat')">
+                    <img src="public/pay/WeChat.svg" alt="微信" class="pay-icon">
+                    <span>微信</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <img id="qrCode" alt="二维码" class="qr-code">
+        </div>
+    </div>
+    <!--修改支付配置在script.js-->
+    <script src="script.js"></script>
+</body>
+</html>

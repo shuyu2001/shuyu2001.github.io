@@ -1,0 +1,185 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+}
+.avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    object-fit: cover;
+}
+.user-name {
+    font-size: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: white;
+    font-family: SimSun, "宋体", serif;
+    opacity: 0;
+    animation: fadeInFromLeft 2s ease-in forwards;
+}
+.thank-you {
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: white;
+    font-family: SimSun, "宋体", serif;
+    opacity: 0;
+    animation: fadeInFromLeft 2s ease-in forwards;
+}
+@keyframes fadeInFromLeft {
+    from { 
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+.button {
+    width: 120px;
+    height: 36px;
+    border-radius: 18px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    text-decoration: none;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+.button:hover {
+    transform: scale(1.05);
+}
+.pay-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+    filter: brightness(0) invert(1);
+}
+.button span {
+    flex: 1;
+    text-align: center;
+}
+.alipay { background-color: #1677FF; }
+.wechat { background-color: #07C160; }
+.qq { background-color: #7A4BFE; }
+.paypal { background-color: #0070BA; }
+.footer {
+    color: white;
+    text-align: center;
+    width: 100%;
+    padding-top: 20px;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.close {
+    align-self: flex-end;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.qr-code {
+    width: 200px;
+    height: 200px;
+    margin: 20px auto;
+}
+@media (max-width: 600px) {
+    .buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    .button {
+        width: 150px;
+    }
+    .modal-content {
+        margin: 5% auto;
+        width: 85%;
+        max-width: 320px;
+        padding: 15px;
+    }
+    .qr-code {
+        width: 160px;
+        height: 160px;
+    }
+    .open-app {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+    .thank-you {
+        font-size: 16px;
+    }
+    .avatar {
+        width: 120px;
+        height: 120px;
+    }
+}
